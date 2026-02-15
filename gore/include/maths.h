@@ -13,5 +13,7 @@ namespace gore
 		vec3 min;
 		vec3 max;
 	};
+
+	namespace maths = glm;
 }
 #endif //GORE_MATHS_H

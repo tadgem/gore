@@ -11,7 +11,9 @@ add_library(gore_core
         include/stl.h
         include/json.h
         include/glu.h
-        src/glu.cpp)
+        src/glu.cpp
+        include/model.h
+        src/model.cpp)
 
 target_include_directories(gore_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include ${EXT_GORE_HEADERS})
 
