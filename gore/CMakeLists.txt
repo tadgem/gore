@@ -7,7 +7,11 @@ add_library(gore_core
         ${IMGUI_DIR}/imgui_widgets.cpp
         ${IMGUI_DIR}/backends/imgui_impl_sdl3.cpp
         ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
-        include/maths.h)
+        include/maths.h
+        include/stl.h
+        include/json.h
+        include/glu.h
+        src/glu.cpp)
 
 target_include_directories(gore_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include ${EXT_GORE_HEADERS})
 

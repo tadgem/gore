@@ -1,20 +1,21 @@
 #include "gore.h"
 
 int main(int argc, char* argv[]) {
-    
-    gore_ctx gore = gore_init();
+    gore::json j {};
+    j["dad"] = 2;
+    gore::ctx gore = gore::init();
 
-    while (gore_run(&gore))
+    while (gore::run(&gore))
     {
         if (ImGui::Begin("Hello"))
         {
 
         }
         ImGui::End();
-        gore_frame(&gore);
+        gore::frame(&gore);
     }
 
-    gore_quit(&gore);
+    gore::quit(&gore);
 
     return 0;
 }
