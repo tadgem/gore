@@ -117,7 +117,7 @@
 //  ES 2.0    100       "#version 100"      = WebGL 1.0
 //  ES 3.0    300       "#version 300 es"   = WebGL 2.0
 //----------------------------------------
-
+#define IMGUI_IMPL_OPENGL_ES3
 #if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
 #define _CRT_SECURE_NO_WARNINGS
 #endif
@@ -166,7 +166,7 @@
 #if (defined(__APPLE__) && (TARGET_OS_IOS || TARGET_OS_TV))
 #include <OpenGLES/ES3/gl.h>    // Use GL ES 3
 #else
-#include <GLES3/gl3.h>          // Use GL ES 3
+#include <glad/glad.h>          // Use GL ES 3
 #endif
 #elif !defined(IMGUI_IMPL_OPENGL_LOADER_CUSTOM)
 // Modern desktop OpenGL doesn't have a standard portable header file to load OpenGL function pointers.
@@ -979,7 +979,7 @@ bool    ImGui_ImplOpenGL3_CreateDeviceObjects()
         vertex_shader = vertex_shader_glsl_410_core;
         fragment_shader = fragment_shader_glsl_410_core;
     }
-    else if (glsl_version == 300)
+    else if (glsl_version >= 300)
     {
         vertex_shader = vertex_shader_glsl_300_es;
         fragment_shader = fragment_shader_glsl_300_es;
